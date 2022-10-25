@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://TitleFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Souvenir-Bold.otf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Crafting.gd" type="Script" id=4]
 [ext_resource path="res://SubtitleFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://images/footer.png" type="Texture" id=6]
+[ext_resource path="res://images/crafting_scene.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -14,11 +15,10 @@ font_data = ExtResource( 2 )
 [node name="Scene" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 640.0
-theme = ExtResource( 3 )
-color = Color( 1, 0.870588, 0.52549, 1 )
+[node name="crafting_background" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 7 )
+centered = false
 
 [node name="Title" type="Label" parent="."]
 margin_right = 1024.0
@@ -35,7 +35,6 @@ margin_top = 88.0
 margin_right = 1024.0
 margin_bottom = 158.0
 input_pass_on_modal_close_click = false
-custom_colors/font_color = Color( 0.219608, 0.529412, 0.0470588, 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "Choose your Musubi style for today"
 align = 1

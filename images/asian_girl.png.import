@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/asian_female.png-2c87cdea9ce3151e535b7fe1bec09a2d.stex"
+path="res://.import/asian_girl.png-ba858528fa980248322f9e1affc96a5d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/asian_female.png"
-dest_files=[ "res://.import/asian_female.png-2c87cdea9ce3151e535b7fe1bec09a2d.stex" ]
+source_file="res://images/asian_girl.png"
+dest_files=[ "res://.import/asian_girl.png-ba858528fa980248322f9e1affc96a5d.stex" ]
 
 [params]
 
