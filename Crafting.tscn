@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://TitleFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Souvenir-Bold.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Base.tres" type="Theme" id=3]
 [ext_resource path="res://Crafting.gd" type="Script" id=4]
 [ext_resource path="res://SubtitleFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://images/footer.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -164,6 +165,12 @@ margin_right = 598.0
 margin_bottom = 584.0
 rect_pivot_offset = Vector2( 136, 16 )
 text = "Back"
+
+[node name="footer" type="Sprite" parent="."]
+position = Vector2( 0, 612 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
+centered = false
 
 [connection signal="pressed" from="Buy1" to="." method="_on_Buy1_pressed"]
 [connection signal="pressed" from="Buy2" to="." method="_on_Buy2_pressed"]
