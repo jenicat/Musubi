@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://buttons/_continue_button.png" type="Texture" id=1]
+[ext_resource path="res://8EndOfDayReport.gd" type="Script" id=2]
+[ext_resource path="res://images/end_of_day_scene_ .png" type="Texture" id=3]
+[ext_resource path="res://fonts/CooperBlackStd.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://SubtitleFont.tres" type="DynamicFont" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 4 )
+
+[node name="end_of_day_scene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="end_of_day_background" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Title" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 480.0
+margin_right = 1025.0
+margin_bottom = 580.0
+input_pass_on_modal_close_click = false
+custom_colors/font_color = Color( 0.0392157, 0, 0.576471, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "End of day report"
+align = 1
+valign = 1
+
+[node name="Subtitle" type="Label" parent="."]
+margin_top = 552.0
+margin_right = 1024.0
+margin_bottom = 622.0
+input_pass_on_modal_close_click = false
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "You have sold X musubi"
+align = 1
+valign = 1
+
+[node name="OkayButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 318.0
+margin_top = 636.0
+margin_right = 1025.0
+margin_bottom = 849.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 136, 16 )
+icon = ExtResource( 1 )
+flat = true
+
+[connection signal="pressed" from="OkayButton" to="." method="_on_OkayButton_pressed"]
