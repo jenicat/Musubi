@@ -1,18 +1,30 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://7Selling.gd" type="Script" id=1]
-[ext_resource path="res://images/redshirt_boy.png" type="Texture" id=2]
+[ext_resource path="res://characters/_blueshirt1.png" type="Texture" id=2]
 [ext_resource path="res://images/footer.png" type="Texture" id=3]
-[ext_resource path="res://images/scooter_boy.png" type="Texture" id=4]
-[ext_resource path="res://images/asian_girl.png" type="Texture" id=5]
-[ext_resource path="res://images/redshirt_girl.png" type="Texture" id=6]
+[ext_resource path="res://characters/_redshirt2.png" type="Texture" id=4]
+[ext_resource path="res://characters/_bungirl2.png" type="Texture" id=5]
+[ext_resource path="res://characters/_redguy2.png" type="Texture" id=6]
 [ext_resource path="res://images/selling.png" type="Texture" id=7]
-[ext_resource path="res://images/blueshirt_girl.png" type="Texture" id=8]
+[ext_resource path="res://characters/_redguy4.png" type="Texture" id=8]
 [ext_resource path="res://buttons/_end_of_day_button.png" type="Texture" id=9]
+[ext_resource path="res://characters/_scooterguy1.png" type="Texture" id=10]
+[ext_resource path="res://characters/_redguy3.png" type="Texture" id=11]
+[ext_resource path="res://characters/_scooterguy4-11.png" type="Texture" id=12]
+[ext_resource path="res://characters/_redshirt3.png" type="Texture" id=13]
+[ext_resource path="res://characters/_redshirt1.png" type="Texture" id=14]
+[ext_resource path="res://characters/_bungirl1.png" type="Texture" id=15]
+[ext_resource path="res://characters/_scooterguy2-09.png" type="Texture" id=16]
+[ext_resource path="res://characters/_scooterguy3-10.png" type="Texture" id=17]
+[ext_resource path="res://characters/_blueshirt2.png" type="Texture" id=18]
+[ext_resource path="res://characters/_bungirl3.png" type="Texture" id=19]
+[ext_resource path="res://characters/_blueshirt3.png" type="Texture" id=20]
+[ext_resource path="res://characters/_bungirl4.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -20,7 +32,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -28,7 +40,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 14 ), ExtResource( 4 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -36,7 +48,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -44,7 +56,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 18 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -73,33 +85,34 @@ text = "Sell 1 Musubi"
 
 [node name="scooter_boy" type="AnimatedSprite" parent="."]
 position = Vector2( 686.625, 312.625 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-playing = true
+frame = 2
 
 [node name="asian_girl" type="AnimatedSprite" parent="."]
-position = Vector2( 566.625, 356.625 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 391, 374 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-playing = true
+frame = 2
 
 [node name="redshirt_girl" type="AnimatedSprite" parent="."]
 position = Vector2( 255.625, 313.625 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
-playing = true
+frame = 1
+speed_scale = 0.75
 
 [node name="redshirt_boy" type="AnimatedSprite" parent="."]
 position = Vector2( 90.625, 323.625 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 4 )
-playing = true
+frame = 2
 
 [node name="blueshirt_girl" type="AnimatedSprite" parent="."]
 position = Vector2( 894.625, 339.625 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 5 )
-playing = true
+frame = 1
 
 [node name="footer" type="Sprite" parent="."]
 position = Vector2( 0, 612 )
@@ -121,9 +134,9 @@ rect_pivot_offset = Vector2( 136, 16 )
 icon = ExtResource( 9 )
 flat = true
 
+[connection signal="pressed" from="This neither" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="This neither" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="This neither" to="." method="_on_ContinueButton_pressed"]
-[connection signal="pressed" from="This neither" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="EndDayButton" to="." method="_on_EndDayButton_pressed"]
 [connection signal="pressed" from="EndDayButton" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="EndDayButton" to="." method="_on_ContinueButton_pressed"]
-[connection signal="pressed" from="EndDayButton" to="." method="_on_EndDayButton_pressed"]
